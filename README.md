@@ -5,7 +5,7 @@ TCC do curso de Análise e Desenvolvimento de Sistemas da universidade UniRitter
 
 Seu principal objetivo é auxiliar o tutor com datas de idas ao veterinário, lembranças de datas futuras pré-definidas pelo usuário para as vacinações, lembrete de horários de medicações, tabela de vacinações **(ainda é necessário ir atrás de profissionais para saber a maneira mais segura para a realização da carteirinha)**.
 
-*O nome da aplicação será mudado posteriormente* 
+*O nome da aplicação será alterado posteriormente.* 
 
 # Tecnologias
 
