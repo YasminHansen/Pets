@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FaPowerOff, FaPaw, FaTrashAlt } from 'react-icons/fa';
 
 import logo from '../../assets/logo.png';
@@ -8,6 +8,8 @@ import './style.css';
 import api from '../../services/api';
 
 export default function Profile(){
+    const history = useHistory();
+
     const [pets, setPets] = useState([]);
     const userName = localStorage.getItem('userName');
     const userId = localStorage.getItem('userId');
@@ -35,6 +37,13 @@ export default function Profile(){
         }
     }
 
+    function handleLogout(){
+        localStorage.clear();
+
+        history.push('/');
+    }
+
+
     return (
         <div className="profile-container">
             <header>
@@ -42,7 +51,7 @@ export default function Profile(){
                 <span>Bem vindo, { userName }!</span>
 
                 <Link className="button" to="/pet/cadastrar">Cadastrar Pet</Link>
-                <button type="button">
+                <button onClick={ handleLogout } type="button">
                     < FaPowerOff size={ 18 } color="#b757e2"/>
                 </button>
             </header>

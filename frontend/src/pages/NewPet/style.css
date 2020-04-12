@@ -43,7 +43,7 @@
 .new-pet-container .content form .input-group{
     display: flex;
     justify-content: space-between;
-    margin: 0px 15px 5px;
+    margin: 0px 0px 5px 15px;
 }
 
 .new-pet-container .content form .input-group div{
