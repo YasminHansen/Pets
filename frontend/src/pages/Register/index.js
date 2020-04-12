@@ -14,6 +14,10 @@ export default function Register(){
                         < FaDog color="#b757e2" />
                     </h1>
                     <p>Faça seu cadastro, entre na plataforma e organize as informações dos seus pets.</p>
+                    <Link className="back-link" to="/">
+                        < FaArrowLeft size={ 16 } color="#b757e2" /> 
+                        Voltar para home
+                    </Link>
                 </section> 
 
                 <form>
@@ -27,13 +31,10 @@ export default function Register(){
                     <button className="button" type="submit">
                         Cadastrar
                     </button>
-                    <Link className="back-link" to="/">
-                        < FaArrowLeft size={ 16 } color="#b757e2" /> 
-                        Voltar para home
-                </Link>
+
                 </form>  
 
             </div> 
         </div>
-    )
+    );
 }

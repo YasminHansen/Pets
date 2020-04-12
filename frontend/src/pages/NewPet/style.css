@@ -1,0 +1,69 @@
+.new-pet-container{
+    width: 100%;
+    max-width: 1120px;
+    height: 100vh;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.new-pet-container .content {
+    width: 100%;
+    padding: 96px;
+    background: #f0f0f5;
+    box-shadow: 0 0 100px rgba(0,0,0,0.1);
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.new-pet-container .content section h1{
+    font-size: 36px;
+}
+.new-pet-container .content section h1 svg{
+    margin-left: 10px;
+}
+.new-pet-container .content section p{
+    font-size: 16px;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 400px;
+}
+.new-pet-container .content form{
+    width: 100%;
+    max-width: 450px;
+}
+.new-pet-container .content form input{
+    margin-bottom: 5px;
+}
+
+.new-pet-container .content form .input-group{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 15px 5px;
+}
+
+.new-pet-container .content form .input-group div{
+    display: flex;
+}
+
+.new-pet-container .content form .input-group div p{
+    font: 400 18px Roboto, sans-serif;
+    color: #999292;
+    padding-top: 5px;
+}
+
+.new-pet-container .content form .input-group div select{
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #999292;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    margin-left: 10px;
+}
