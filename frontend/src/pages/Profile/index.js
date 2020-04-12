@@ -21,6 +21,20 @@ export default function Profile(){
         })
     }, [userId]);
 
+    async function handleDeletePet(id){
+        try{
+            await api.delete(`pets/${id}`, {
+                headers: {
+                    Authorization: userId,
+                }
+            });
+
+            setPets(pets.filter(pet => pet.id !== id));
+        } catch (err){
+            alert('Erro ao deletar pet. Tente novamente.');
+        }
+    }
+
     return (
         <div className="profile-container">
             <header>
@@ -58,7 +72,9 @@ export default function Profile(){
                             <strong>Castrado: </strong>
                             <p>{ pet.castrated }</p>
                         </div>
-                        <button type="button">< FaTrashAlt size={ 20 } color="#b757e2"/></button>
+                        <button onClick={() => handleDeletePet(pet.id)} type="button">
+                            < FaTrashAlt size={ 20 } color="#b757e2"/>
+                        </button>
                     </li>
                ))}
             </ul>
