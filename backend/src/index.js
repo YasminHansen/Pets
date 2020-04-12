@@ -1,9 +1,7 @@
-const express = require('express'); //importando o módulo express para a variável
-const cors = require('cors');
+var express = require('express'); //importando o módulo express para a variável
+var cors = require('cors');
 const routes = require('./routes'); //importa o arquivo com as rotas
-
-
-const app = express(); //armazena a aplicação
+var app = express(); //armazena a aplicação
 
 app.use(cors());
 app.use(express.json());

@@ -6,11 +6,13 @@ import logo from '../../assets/logo.png';
 import './style.css';
 
 export default function Profile(){
+    const userName = localStorage.getItem('userName');
+
     return (
-        <div class="profile-container">
+        <div className="profile-container">
             <header>
                 <img src={ logo } alt="pets" />
-                <span>Bem vindo!</span>
+                <span>Bem vindo, { userName }!</span>
 
                 <Link className="button" to="/pet/cadastrar">Cadastrar Pet</Link>
                 <button type="button">
