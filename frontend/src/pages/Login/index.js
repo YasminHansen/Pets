@@ -19,6 +19,7 @@ export default function Login(){
             const response = await api.post('session', { email, password });
         
             localStorage.setItem('userName', response.data.name);
+            localStorage.setItem('userId', response.data.id);
 
             history.push('/profile');
         } catch (err){

@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaPowerOff, FaPaw, FaTrashAlt } from 'react-icons/fa';
+
 import logo from '../../assets/logo.png';
 
 import './style.css';
+import api from '../../services/api';
 
 export default function Profile(){
+    const [pets, setPets] = useState([]);
     const userName = localStorage.getItem('userName');
+    const userId = localStorage.getItem('userId');
+    useEffect(() => {
+        api.get('profile', {
+            headers: {
+                Authorization: userId,
+            }
+        }).then( response => {
+            setPets(response.data);
+        })
+    }, [userId]);
 
     return (
         <div className="profile-container">
@@ -23,14 +36,15 @@ export default function Profile(){
             <h1>Pets Cadastrados < FaPaw color="#b757e2"/></h1>
 
             <ul>
-                <li>
-                    <div>
+               { pets.map(pet => (
+                    <li key={ pet.id }>
+                        <div>
                             <strong>Nome: </strong>
-                            <p>Fred</p>
+                            <p>{ pet.name }</p>
                         </div>
                         <div>
                             <strong>Idade: </strong>
-                            <p>5 anos</p>
+                            <p>{ pet.age }</p>
                         </div>
                         <div>
                             <strong>Espécie: </strong>
@@ -38,89 +52,15 @@ export default function Profile(){
                         </div>
                         <div>
                             <strong>Gênero: </strong>
-                            <p>Macho</p>
+                            <p>{ pet.gender }</p>
                         </div>
                         <div>
                             <strong>Castrado: </strong>
-                            <p>Sim</p>
+                            <p>{ pet.castrated }</p>
                         </div>
-                    <button type="button">< FaTrashAlt size={ 20 } color="#b757e2"/></button>
-                </li>
-
-                <li>
-                    <div>
-                        <strong>Nome: </strong>
-                        <p>Fred</p>
-                    </div>
-                    <div>
-                        <strong>Idade: </strong>
-                        <p>5 anos</p>
-                    </div>
-                    <div>
-                        <strong>Espécie: </strong>
-                        <p>Gato</p>
-                    </div>
-                    <div>
-                        <strong>Gênero: </strong>
-                        <p>Macho</p>
-                    </div>
-                    <div>
-                        <strong>Castrado: </strong>
-                        <p>Sim</p>
-                    </div>
-
-                    <button type="button">< FaTrashAlt size={ 20 } color="#b757e2"/></button>
-                </li>
-
-                <li>
-                    <div>
-                        <strong>Nome: </strong>
-                        <p>Fred</p>
-                    </div>
-                    <div>
-                        <strong>Idade: </strong>
-                        <p>5 anos</p>
-                    </div>
-                    <div>
-                        <strong>Espécie: </strong>
-                        <p>Gato</p>
-                    </div>
-                    <div>
-                        <strong>Gênero: </strong>
-                        <p>Macho</p>
-                    </div>
-                    <div>
-                        <strong>Castrado: </strong>
-                        <p>Sim</p>
-                    </div>
-
-                    <button type="button">< FaTrashAlt size={ 20 } color="#b757e2"/></button>
-                </li>
-
-                <li>
-                    <div>
-                        <strong>Nome: </strong>
-                        <p>Fred</p>
-                    </div>
-                    <div>
-                        <strong>Idade: </strong>
-                        <p>5 anos</p>
-                    </div>
-                    <div>
-                        <strong>Espécie: </strong>
-                        <p>Gato</p>
-                    </div>
-                    <div>
-                        <strong>Gênero: </strong>
-                        <p>Macho</p>
-                    </div>
-                    <div>
-                        <strong>Castrado: </strong>
-                        <p>Sim</p>
-                    </div>
-
-                    <button type="button">< FaTrashAlt size={ 20 } color="#b757e2"/></button>
-                </li>
+                        <button type="button">< FaTrashAlt size={ 20 } color="#b757e2"/></button>
+                    </li>
+               ))}
             </ul>
         </div>
     );

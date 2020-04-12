@@ -10,6 +10,7 @@ module.exports = {
             'password': password
         })
         .select('name')
+        .select('id')
         .first();
 
         if(!user){
