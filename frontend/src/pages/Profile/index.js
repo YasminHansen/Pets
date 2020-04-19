@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FaPowerOff, FaPaw, FaTrashAlt } from 'react-icons/fa';
 
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo2.png';
 
 import './style.css';
 import api from '../../services/api';
@@ -50,7 +50,10 @@ export default function Profile(){
                 <img src={ logo } alt="pets" />
                 <span>Bem vindo, { userName }!</span>
 
-                <Link className="button" to="/pet/cadastrar">Cadastrar Pet</Link>
+                <div className="option-group">
+                    <Link className="button" to="/pet/cadastrar">Cadastrar Pet</Link>
+                    <Link className="button" to="/agenda">Agenda</Link>
+                </div>
                 <button onClick={ handleLogout } type="button">
                     < FaPowerOff size={ 18 } color="#b757e2"/>
                 </button>
