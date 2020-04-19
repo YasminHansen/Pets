@@ -2,10 +2,11 @@
 exports.up = function(knex) {
     return knex.schema.createTable('commitment', function(table){
         table.increments();
-        table.bool('bath').notNullable();
-        table.bool('medication').notNullable();
-        table.bool('vet_consultation').notNullable();
-        table.bool('special_food').notNullable();
+        table.string('description').notNullable();
+      /*  table.integer('bath').notNullable();
+        table.integer('medication').notNullable();
+        table.integer('vet_consultation').notNullable();
+        table.integer('special_food').notNullable();*/
     });
 }
 
