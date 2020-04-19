@@ -18,7 +18,8 @@ routes.get('/user', UserController.index);
 // Esse método será excluído futuramente
 routes.post('/user', UserController.create); //cria a rota de criação do usuário
 
-routes.get('/profile', ProfileController.index);
+routes.get('/profile', ProfileController.index); //exibe todos os pets cadastrados
+routes.get('/profile/schedule', ProfileController.scheduleIndex); //exibe todos os compromissos cadastrados pelo usuário
 
 //Rotas relacionada ao cadastro, edição e deleção de pet
 routes.get('/pets', PetController.index); //lista todos os pets
